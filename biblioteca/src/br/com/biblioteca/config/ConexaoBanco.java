@@ -1,4 +1,4 @@
-package br.com.bilbioteca.config;
+package br.com.biblioteca.config;
 
 import java.sql.*;
 import java.util.logging.Level;

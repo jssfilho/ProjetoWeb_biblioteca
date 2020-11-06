@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.bilbioteca.config.ConexaoBanco;
+import br.com.biblioteca.config.ConexaoBanco;
 
-public class Autor {
+public class Autor implements Model{
 	private int codigo;
 	private String nome;
 	private String email;

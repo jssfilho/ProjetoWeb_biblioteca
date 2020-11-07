@@ -10,16 +10,17 @@
 <title>Autores Cadastrados</title>
 </head>
 <body>
+	<h3>Autores Salvos</h3>
 	<c:forEach items="${lista}" var="autor">
 		<li>
 			<label>${ autor.getCodigo() }</label>
 			<label>${ autor.getNome() }</label>
 			<label>${ autor.getEmail() }</label>
-			<form action="/biblioteca/listaAutores" method="POST">
+			<form action="/biblioteca/autores/listaAutores" method="POST">
 				<button type="submit" name="codigo" value="${autor.getCodigo() }">EXCLUIR</button>
 			</form>
-			<form action="/biblioteca/editarAutor" method="GET">
-				<button type="submit" name="codigo" value="${autor.getCodigo() }">EXCLUIR</button>
+			<form action="/biblioteca/autores/editarAutor" method="GET">
+				<button type="submit" name="codigo" value="${autor.getCodigo() }">EDITAR</button>
 			</form>
 		</li>
 	</c:forEach>

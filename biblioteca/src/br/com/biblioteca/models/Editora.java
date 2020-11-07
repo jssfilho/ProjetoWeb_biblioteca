@@ -20,8 +20,8 @@ public class Editora implements Model{
 	}
 	
 
-	public Editora(int codigo, String nome, String cnpj) {
-		this.codigo = codigo;
+	public Editora(String nome, String cnpj) {
+		
 		this.nome = nome;
 		this.cnpj = cnpj;
 	}

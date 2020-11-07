@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Editar Autor</title>
+<title>Nova Editora</title>
 </head>
 <body>
-	<h3>Editar Autor</h3>
+	<h3>Nova Editora</h3>
 	<br />
-	<form action="/biblioteca/autores/editarAutor" method="post">
-		Novo Nome:<input type="text" name="novoNome"/>
-		Novo Email:<input type="text" name="novoEmail" />
+	<form action="/biblioteca/editoras/novaEditora" method="post">
+		Nome:<input type="text" name="nome"/>
+		Cnpj:<input type="text" name="cnpj" />
 		<input type="submit" />
 	</form>
 </body>

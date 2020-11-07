@@ -1,4 +1,4 @@
-/*create database biblioteca;*/
+create database biblioteca;
 create table biblioteca.autor(
     cod integer primary key NOT NULL AUTO_INCREMENT,
     nome varchar(40) not null,
@@ -23,7 +23,7 @@ create table biblioteca.obra(
     cod_colecao integer
 );
 
-create table biblioteca.obra(
+create table biblioteca.obra_autor(
     cod_obra integer primary key NOT NULL ,
     cod_autor integer NOT NULL 
 );

@@ -9,7 +9,7 @@
 <body>
 	<h3>Novo Autor</h3>
 	<br />
-	<form action="/biblioteca/novoAutor" method="post">
+	<form action="/biblioteca/autores/novoAutor" method="post">
 		Nome do Autor: <input type="text" name="nome" />
 		Email do Autor: <input type="text" name="email" />
 		<input type="submit" />

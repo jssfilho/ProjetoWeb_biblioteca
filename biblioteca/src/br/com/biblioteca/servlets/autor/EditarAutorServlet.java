@@ -32,7 +32,7 @@ public class EditarAutorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String codigo = request.getParameter("codigo");
-		RequestDispatcher rd = request.getRequestDispatcher("/formEditaAutor.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/autores/formEditaAutor.jsp");
 		request.setAttribute("codigo", codigo);
 		rd.forward(request, response);
 	}
@@ -53,7 +53,7 @@ public class EditarAutorServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/listaAutores");
+		response.sendRedirect("/biblioteca/autores/listaAutores");
 	}
 
 }

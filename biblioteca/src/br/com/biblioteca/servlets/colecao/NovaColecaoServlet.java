@@ -1,38 +1,37 @@
-package br.com.biblioteca.servlets.autor;
+package br.com.biblioteca.servlets.colecao;
 
 import java.io.IOException;
-
-import br.com.biblioteca.models.Autor;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import br.com.biblioteca.models.Colecao;
+
 /**
- * Servlet implementation class NovoAutorServlet
+ * Servlet implementation class NovaColecao
  */
-@WebServlet("/autores/novoAutor")
-public class NovoAutorServlet extends HttpServlet {
+@WebServlet("/colecoes/novaColecao")
+public class NovaColecaoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NovoAutorServlet() {
+    public NovaColecaoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome = request.getParameter("nome");
-		String email = request.getParameter("email");
-		Autor novo = new Autor(nome,email);
+		String genero = request.getParameter("genero");
+		Colecao novo = new Colecao(nome,genero);
 		
 		try {
 			novo.salve();
@@ -41,7 +40,7 @@ public class NovoAutorServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/autores/listaAutores");
+		response.sendRedirect("/biblioteca/colecoes/listaColecoes");
 	}
 
 }

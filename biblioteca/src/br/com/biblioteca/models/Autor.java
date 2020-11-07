@@ -87,6 +87,29 @@ public class Autor implements Model{
         }
 		return lista;
 	}
+	public static Autor getOne(int codigo) throws ClassNotFoundException{
+		Autor autor = new Autor();
+		ResultSet result =null;
+		Connection con = ConexaoBanco.getConnection();
+        PreparedStatement stmt = null;
+		try {
+			
+            stmt = con.prepareStatement("SELECT * FROM biblioteca.autor");
+            
+            result =  stmt.executeQuery();
+            
+            if(result.next()) {	
+            	autor.setCodigo(result.getInt("cod"));
+            	autor.setNome(result.getString("nome"));
+            	autor.setEmail(result.getString("email"));
+            }else
+            	System.out.println("Autor não existe!");
+            
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+		return autor;
+	}
 	
 	public static boolean atualizar(int codigo, String novoNome,String novoEmail) throws ClassNotFoundException{
 		
@@ -95,7 +118,7 @@ public class Autor implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("UPDATE autor SET nome = ? AND email = ? WHERE codigo = ?");
+            stmt = con.prepareStatement("UPDATE autor SET nome = ? AND email = ? WHERE cod = ?");
             stmt.setString(1, novoNome);
             stmt.setString(2, novoEmail);
             stmt.setInt(3, codigo);

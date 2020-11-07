@@ -15,7 +15,7 @@ import br.com.biblioteca.models.Autor;
 /**
  * Servlet implementation class ListaAutorServlet
  */
-@WebServlet("/listaAutores")
+@WebServlet("/autores/listaAutores")
 public class ListaAutorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -38,14 +38,17 @@ public class ListaAutorServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("/biblioteca/autores/listaAutorView.jsp");
+		for(int i = 0;i<listaAutor.size();i++) {
+			System.out.println(listaAutor.get(i).getNome());
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("/autores/listaAutorView.jsp");
 		request.setAttribute("autores", listaAutor);
 		rd.forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String codigo = request.getParameter("codigo");
 		
@@ -61,6 +64,6 @@ public class ListaAutorServlet extends HttpServlet {
 		}
 		
 		response.sendRedirect("/biblioteca/autores/listaAutores");
-	}
+	}*/
 
 }

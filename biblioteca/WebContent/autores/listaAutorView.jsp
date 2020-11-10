@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h3>Autores Salvos</h3>
-	<c:forEach items="${lista}" var="autor">
+	<c:forEach items="${autores}" var="autor">
 		<li>
 			<label>${ autor.getCodigo() }</label>
 			<label>${ autor.getNome() }</label>

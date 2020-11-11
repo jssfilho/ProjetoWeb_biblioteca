@@ -13,16 +13,15 @@
 	<h3>Autores Salvos</h3>
 	<c:forEach items="${autores}" var="autor">
 		<li>
-			<label>${ autor.getCodigo() }</label>
-			<label>${ autor.getNome() }</label>
-			<label>${ autor.getEmail() }</label>
+			<label>${ autor.getCodigo() }</label><br>
+			<label>${ autor.getNome() }</label><br>
+			<label>${ autor.getEmail() }</label><br>
 			<form action="/biblioteca/autores/listaAutores" method="POST">
 				<button type="submit" name="codigo" value="${autor.getCodigo() }">EXCLUIR</button>
 			</form>
-			<form action="/biblioteca/autores/editarAutor" method="GET">
-				<button type="submit" name="codigo" value="${autor.getCodigo() }">EDITAR</button>
-			</form>
+			<br />
 		</li>
 	</c:forEach>
+	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

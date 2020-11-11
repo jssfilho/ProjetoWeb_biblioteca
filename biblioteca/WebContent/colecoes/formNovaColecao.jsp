@@ -14,5 +14,6 @@
 		Genero:<input type="text" name="genero" />
 		<input type="submit" />
 	</form>
+	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

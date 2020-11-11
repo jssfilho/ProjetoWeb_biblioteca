@@ -11,15 +11,17 @@
 </head>
 <body>
 	<h3>Colecoes Salvas</h3>
-	<c:forEach items="${lista}" var="colecao">
+	<c:forEach items="${colecoes}" var="colecao">
 		<li>
-			<label>${ colecao.getCodigo() }</label>
-			<label>${ colecao.getNome() }</label>
-			<label>${ colecao.getGenero() }</label>
+			<label>${ colecao.getCodigo() }</label><br>
+			<label>${ colecao.getNome() }</label><br>
+			<label>${ colecao.getGenero() }</label><br>
 			<form action="/biblioteca/colecoes/listaColecoes" method="POST">
 				<button type="submit" name="codigo" value="${colecao.getCodigo() }">EXCLUIR</button>
 			</form>
+			<br />
 		</li>
 	</c:forEach>
+	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

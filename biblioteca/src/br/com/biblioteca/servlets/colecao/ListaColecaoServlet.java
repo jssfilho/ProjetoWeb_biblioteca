@@ -39,7 +39,7 @@ public class ListaColecaoServlet extends HttpServlet {
    			// TODO Auto-generated catch block
    			e.printStackTrace();
    		}
-   		RequestDispatcher rd = request.getRequestDispatcher("/biblioteca/colecoes/listaColecoesView.jsp");
+   		RequestDispatcher rd = request.getRequestDispatcher("/colecoes/listaColecoesView.jsp");
    		request.setAttribute("colecoes", lista);
    		rd.forward(request, response);
    	}

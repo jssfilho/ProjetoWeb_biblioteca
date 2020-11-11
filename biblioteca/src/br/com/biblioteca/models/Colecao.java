@@ -124,7 +124,7 @@ public class Colecao {
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("UPDATE colecao SET nome = ? AND genero = ? WHERE cod = ?");
+            stmt = con.prepareStatement("UPDATE colecao SET nome = ?, genero = ? WHERE cod = ?");
             stmt.setString(1, novoNome);
             stmt.setString(2, novoGenero);
             stmt.setInt(3, codigo);

@@ -14,5 +14,6 @@
 		Cnpj:<input type="text" name="cnpj" />
 		<input type="submit" />
 	</form>
+	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

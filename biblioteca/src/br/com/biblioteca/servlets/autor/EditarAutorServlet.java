@@ -1,6 +1,7 @@
 package br.com.biblioteca.servlets.autor;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,11 +30,20 @@ public class EditarAutorServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String codigo = request.getParameter("codigo");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Autor> listaAutor = null;
+		try {
+			listaAutor = Autor.listar();
+			System.out.println("teste");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for(int i = 0;i<listaAutor.size();i++) {
+			System.out.println(listaAutor.get(i).getNome() + "editar");
+		}
 		RequestDispatcher rd = request.getRequestDispatcher("/autores/formEditaAutor.jsp");
-		request.setAttribute("codigo", codigo);
+		request.setAttribute("autores", listaAutor);
 		rd.forward(request, response);
 	}
 

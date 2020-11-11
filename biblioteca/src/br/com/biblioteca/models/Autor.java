@@ -118,7 +118,7 @@ public class Autor implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("UPDATE autor SET nome = ? AND email = ? WHERE cod = ?");
+            stmt = con.prepareStatement("UPDATE autor SET nome = ? , email = ? WHERE cod = ?");
             stmt.setString(1, novoNome);
             stmt.setString(2, novoEmail);
             stmt.setInt(3, codigo);

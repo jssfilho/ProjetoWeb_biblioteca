@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h3>Editoras Salvas</h3>
-	<c:forEach items="${lista}" var="editora">
+	<c:forEach items="${editoras}" var="editora">
 		<li>
 			<label>${ editora.getCodigo() }</label>
 			<label>${ editora.getNome() }</label>
@@ -21,5 +21,6 @@
 			</form>
 		</li>
 	</c:forEach>
+	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

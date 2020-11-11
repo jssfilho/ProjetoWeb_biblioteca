@@ -157,7 +157,7 @@ public class Obra implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("UPDATE obra SET titulo = ? AND descricao = ? WHERE cod = ?");
+            stmt = con.prepareStatement("UPDATE obra SET titulo = ?, descricao = ? WHERE cod = ?");
             stmt.setString(1, novoTitulo);
             stmt.setString(2, novaDescricao);
             stmt.setInt(3, codigo);

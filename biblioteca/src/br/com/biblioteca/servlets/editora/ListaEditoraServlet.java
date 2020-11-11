@@ -38,7 +38,7 @@ public class ListaEditoraServlet extends HttpServlet {
    			// TODO Auto-generated catch block
    			e.printStackTrace();
    		}
-   		RequestDispatcher rd = request.getRequestDispatcher("/biblioteca/editoras/listaEditorasView.jsp");
+   		RequestDispatcher rd = request.getRequestDispatcher("/editoras/listaEditoraView.jsp");
    		request.setAttribute("editoras", lista);
    		rd.forward(request, response);
    	}

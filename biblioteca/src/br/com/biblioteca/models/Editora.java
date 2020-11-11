@@ -131,7 +131,7 @@ public class Editora implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("UPDATE editora SET nome = ? AND cnpj = ? WHERE cod = ?");
+            stmt = con.prepareStatement("UPDATE editora SET nome = ?, cnpj = ? WHERE cod = ?");
             stmt.setString(1, novoNome);
             stmt.setString(2, novoCnpj);
             stmt.setInt(3, codigo);

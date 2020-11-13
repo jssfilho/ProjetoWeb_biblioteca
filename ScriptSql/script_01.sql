@@ -24,8 +24,11 @@ create table biblioteca.obra(
     cod_colecao integer
 );
 
-create table biblioteca.obra_autor(
-    cod_obra integer primary key NOT NULL ,
-    cod_autor integer NOT NULL 
+create table biblioteca.obra_autor (
+	cod integer primary key NOT NULL AUTO_INCREMENT,
+    cod_obra integer,
+    cod_autor integer,
+    FOREIGN KEY (cod_obra) REFERENCES biblioteca.obra(cod),
+    FOREIGN KEY (cod_autor) REFERENCES biblioteca.autor(cod)
 );
 */

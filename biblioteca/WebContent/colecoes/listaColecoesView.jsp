@@ -8,20 +8,54 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista Coleções</title>
+<style type="text/css">
+	table {
+    width: 100%;
+  	text-align: center;
+}
+table, td {
+  border: 1px solid black;
+  }
+</style>
 </head>
 <body>
 	<h3>Colecoes Salvas</h3>
+	<table style=" border:1px; border-color:#000;">
+		 <tr>
+		 	<td>
+		 		#ID
+		 	</td>
+		 	 <td>
+				NOME
+		 	</td>
+		  	<td>
+		 		GENERO
+		 	</td>		
+		   <td>
+		 		REMOVER
+		 	</td> 
+		</tr>
 	<c:forEach items="${colecoes}" var="colecao">
-		<li>
-			<label>${ colecao.getCodigo() }</label><br>
-			<label>${ colecao.getNome() }</label><br>
-			<label>${ colecao.getGenero() }</label><br>
-			<form action="/biblioteca/colecoes/listaColecoes" method="POST">
-				<button type="submit" name="codigo" value="${colecao.getCodigo() }">EXCLUIR</button>
-			</form>
-			<br />
+		<tr>
+			<td>
+				<label>${ colecao.getCodigo() }</label>
+			</td>
+			<td>
+				<label>${ colecao.getNome() }</label>
+			</td>
+			<td>
+				<label>${ colecao.getGenero() }</label>
+			</td>
+			<td>
+				<form action="/biblioteca/colecoes/listaColecoes" method="POST">
+					<button type="submit" name="codigo" value="${colecao.getCodigo() }">EXCLUIR</button>
+				</form>
+			</td>
+			
 		</li>
+		</tr>
 	</c:forEach>
+	</table>
 	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

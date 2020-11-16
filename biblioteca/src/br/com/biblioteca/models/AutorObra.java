@@ -49,10 +49,10 @@ public class AutorObra implements Model {
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("INSERT INTO obra_autor (cod, cod_autor, cod_obra) VALUES(?,?,?)", Statement.RETURN_GENERATED_KEYS);
-            stmt.setInt(1, this.id);
-            stmt.setInt(2, this.fkAutor);
-            stmt.setInt(3, this.fkObra);
+            stmt = con.prepareStatement("INSERT INTO obra_autor ( cod_autor, cod_obra) VALUES(?,?)", Statement.RETURN_GENERATED_KEYS);
+           // stmt.setInt(1, this.id);
+            stmt.setInt(1, this.fkAutor);
+            stmt.setInt(2, this.fkObra);
             stmt.executeUpdate();
             ResultSet keys = stmt.getGeneratedKeys();
             if (keys.next()) {
@@ -119,6 +119,33 @@ public class AutorObra implements Model {
 		return obras;
 	}
 	
+	public static boolean delete(int codigo) throws ClassNotFoundException{
+		
+		Connection con = ConexaoBanco.getConnection();
+        PreparedStatement stmt = null;
+		try {
+			
+            stmt = con.prepareStatement("DELETE FROM biblioteca.obra_autor WHERE cod_obra = ?");
+            stmt.setInt(1, codigo);
+            stmt.executeUpdate();
+            
+            
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+		return true;
+	}
+	
+	/*public Collection<Obra> listarObrasAutor() throws ClassNotFoundException {
+	
+	SELECT o.cod, o.titulo, o.descricao, o.cod_editora, o.cod_colecao, a.nome, c.nome, c.genero
+	 FROM biblioteca.obra_autor oa JOIN biblioteca.autor a on oa.cod_autor = a.cod 
+	 JOIN biblioteca.obra o on oa.cod_obra = o.cod 
+	 JOIN biblioteca.colecao c on c.cod = o.cod_colecao
+	
+	
+	}
+	*/
 	public static void main(String[] args) {
 		
 		AutorObra autorObra = new AutorObra();

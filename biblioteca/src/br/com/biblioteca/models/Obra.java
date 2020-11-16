@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.jdbc.Statement;
+
 import br.com.biblioteca.config.ConexaoBanco;
 
 public class Obra implements Model{
@@ -75,28 +77,47 @@ public class Obra implements Model{
 		this.cod_editora = cod_editora;
 	}
 
+	
 	//Metodos de Modelo CRUD
+
+	@Override
+	public String toString() {
+		return "Obra [codigo=" + codigo + ", titulo=" + titulo + ", descricao=" + descricao + ", cod_autores="
+				+ cod_autores + ", cod_editora=" + cod_editora + ", cod_colecao=" + cod_colecao + "]";
+	}
+
 
 	//Metodo Incompleto
 	@Override
 	public boolean salve() throws ClassNotFoundException {
+		return true;
+	}
+	
+	public int salveRetorno()  throws ClassNotFoundException {
 		Connection con = ConexaoBanco.getConnection();
+		int idValue = -1;
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("INSERT INTO obra (nome, email, cod_editora, cod_colecao) VALUES(?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO obra (titulo, descricao, cod_editora, cod_colecao) VALUES(?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, this.titulo);
             stmt.setString(2, this.descricao);
             stmt.setInt(3, this.cod_editora);
             stmt.setInt(4, this.cod_colecao);
             stmt.executeUpdate();
-            
+            ResultSet keys = stmt.getGeneratedKeys();
+            if (keys.next()) {
+            	idValue = (keys.getInt(1));
+            }
+          return idValue;
+     
             
         } catch (SQLException ex) {
             System.out.println(ex);
+            return idValue;
         }
-		return true;
 	}
+	
 	//Metodo Incompleto
 	public static List<Obra> listar() throws ClassNotFoundException {
 		List<Obra> lista = new ArrayList<>();
@@ -152,15 +173,14 @@ public class Obra implements Model{
 	}
 	
 
-	public static boolean atualizar(int codigo, String novoTitulo,String novaDescricao) throws ClassNotFoundException {
+	public static boolean atualizar(int codigo,String novaDescricao) throws ClassNotFoundException {
 		Connection con = ConexaoBanco.getConnection();
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("UPDATE obra SET titulo = ?, descricao = ? WHERE cod = ?");
-            stmt.setString(1, novoTitulo);
-            stmt.setString(2, novaDescricao);
-            stmt.setInt(3, codigo);
+            stmt = con.prepareStatement("UPDATE obra SET descricao = ? WHERE cod = ?");
+            stmt.setString(1, novaDescricao);
+            stmt.setInt(2, codigo);
             stmt.executeUpdate();
             
             

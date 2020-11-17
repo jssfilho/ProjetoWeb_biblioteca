@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Editar Obra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<h3>Editar Obra</h3>
@@ -24,7 +25,7 @@
 				<br />
 			</form>
 		</c:forEach>
-
+	<br>
 	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

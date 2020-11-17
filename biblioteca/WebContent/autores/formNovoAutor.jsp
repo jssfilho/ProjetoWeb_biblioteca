@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Cadastrar Autores</title>
 </head>
 <body>
@@ -14,5 +16,9 @@
 		Email do Autor: <input type="text" name="email" />
 		<input type="submit" />
 	</form>
+	
+	<br>
+		<a href="/biblioteca/">Voltar</a>
+	
 </body>
 </html>

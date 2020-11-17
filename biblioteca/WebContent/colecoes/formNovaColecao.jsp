@@ -5,15 +5,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Nova Colecao</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 	<h3>Nova Colecao</h3>
 	<br />
 	<form action="/biblioteca/colecoes/novaColecao" method="post">
-		Nome:<input type="text" name="nome"/>
-		Genero:<input type="text" name="genero" />
+		Nome:<input type="text" name="nome"/><br>
+		Genero:<input type="text" name="genero" /><br>
+		<br>
 		<input type="submit" />
 	</form>
+	<br>
 	<a href="/biblioteca/">Voltar</a>
 </body>
 </html>

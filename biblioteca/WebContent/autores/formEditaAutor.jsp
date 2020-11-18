@@ -14,7 +14,7 @@
 <body>
 	<h3>Editar Autor</h3>
 	<br />
-	<form action="/biblioteca/autores/editarAutor" method="POST">
+	<form action="/autores/editarAutor" method="POST">
 		Novo Nome:<input type="text" name="novoNome"/><br>
 		Novo Email:<input type="text" name="novoEmail" />
 		<c:forEach items="${autores}" var="autor">
@@ -30,6 +30,6 @@
 		</c:forEach>
 	</form>
 		<br />
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

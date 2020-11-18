@@ -49,7 +49,7 @@ table, td {
 				<label>${ autor.getEmail() }</label>
 			</td>
 			<td>
-				<form action="/biblioteca/autores/listaAutores" method="POST">
+				<form action="/autores/listaAutores" method="POST">
 					<button type="submit" name="codigo" value="${autor.getCodigo() }">EXCLUIR</button>
 				</form>
 			</td>
@@ -57,6 +57,6 @@ table, td {
 		</li>
 	</c:forEach>
 	</table>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

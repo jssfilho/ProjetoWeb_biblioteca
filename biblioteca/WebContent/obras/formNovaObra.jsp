@@ -100,7 +100,7 @@ $(document).ready(function(){
 </head>
 <body>
 
-	<form action="/biblioteca/obras/formNovaObra" method="POST">
+	<form action="/obras/formNovaObra" method="POST">
 		Titulo:<input placeholder="Titulo da Obra" type="text" name="titulo"/>
 		<br><br>
 		Descricao:<TextArea placeholder="Descrição da Obra" type="text" name="descricao" ></TextArea>
@@ -139,7 +139,7 @@ $(document).ready(function(){
 					
 		<input type="submit" >
 	</form>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 
 </body>
 </html>

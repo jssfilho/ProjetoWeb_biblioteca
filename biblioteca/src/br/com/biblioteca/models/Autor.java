@@ -61,6 +61,7 @@ public class Autor implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -71,7 +72,7 @@ public class Autor implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.autor");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.autor");
             
             result =  stmt.executeQuery();
             while(result.next()) {
@@ -85,6 +86,7 @@ public class Autor implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	public static Autor getOne(int codigo) throws ClassNotFoundException{
@@ -94,7 +96,7 @@ public class Autor implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.autor");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.autor");
             
             result =  stmt.executeQuery();
             
@@ -108,6 +110,7 @@ public class Autor implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return autor;
 	}
 	
@@ -128,6 +131,7 @@ public class Autor implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -145,6 +149,7 @@ public class Autor implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 }

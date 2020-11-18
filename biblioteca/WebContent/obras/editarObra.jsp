@@ -15,7 +15,7 @@
 	<br />
 	
 		<c:forEach items="${obras}" var="obra">
-			<form action="/biblioteca/obras/editarObra" method="POST">
+			<form action="/obras/editarObra" method="POST">
 				Nome: ${obra.getTitulo() }<br>
 				Descrição:<br>
 				<textArea type="text" name="novaDescricao">${obra.getDescricao()}</textArea><br>
@@ -26,6 +26,6 @@
 			</form>
 		</c:forEach>
 	<br>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

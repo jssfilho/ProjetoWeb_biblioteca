@@ -49,13 +49,13 @@ table, td {
 				<label>${ editora.getCnpj() }</label>
 			</td>
 			<td>
-				<form action="/biblioteca/editoras/listaEditoras" method="POST">
+				<form action="/editoras/listaEditoras" method="POST">
 					<button type="submit" name="codigo" value="${editora.getCodigo() }">EXCLUIR</button>
 				</form>
 			</td>
 		</tr>
 	</c:forEach>
 	</table>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 
 public class ConexaoBanco {
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/biblioteca";
-    private static final String USER = "root";
-    private static final String PASS = "biblioteca";
+    private static final String URL = "jdbc:mysql://us-cdbr-east-02.cleardb.com:3306/heroku_378ff0ac7bb3b96";
+    private static final String USER = "bfec3c73bb0d75";
+    private static final String PASS = "b1d6f0fd";
     private static Connection conec= null;
     
     public static Connection getConnection() throws ClassNotFoundException{

@@ -11,13 +11,13 @@
 <body>
 	<h3>Nova Colecao</h3>
 	<br />
-	<form action="/biblioteca/colecoes/novaColecao" method="post">
+	<form action="/colecoes/novaColecao" method="post">
 		Nome:<input type="text" name="nome"/><br>
 		Genero:<input type="text" name="genero" /><br>
 		<br>
 		<input type="submit" />
 	</form>
 	<br>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

@@ -40,7 +40,7 @@ public class NovaColecaoServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/colecoes/listaColecoes");
+		response.sendRedirect("/colecoes/listaColecoes");
 	}
 
 }

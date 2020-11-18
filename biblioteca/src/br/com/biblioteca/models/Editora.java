@@ -72,7 +72,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -83,7 +83,7 @@ public class Editora implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.editora");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.editora");
             
             result =  stmt.executeQuery();
             while(result.next()) {
@@ -96,7 +96,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	
@@ -108,7 +108,7 @@ public class Editora implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.autor");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.autor");
             
             result =  stmt.executeQuery();
             
@@ -121,7 +121,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return editora;
 	}
 	
@@ -140,7 +140,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	public static boolean delete(int codigo) throws ClassNotFoundException {
@@ -155,7 +155,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	

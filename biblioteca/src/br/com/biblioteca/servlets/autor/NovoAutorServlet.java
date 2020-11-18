@@ -41,7 +41,7 @@ public class NovoAutorServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/autores/listaAutores");
+		response.sendRedirect("/autores/listaAutores");
 	}
 
 }

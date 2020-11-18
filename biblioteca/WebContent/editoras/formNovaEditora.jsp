@@ -11,11 +11,11 @@
 <body>
 	<h3>Nova Editora</h3>
 	<br />
-	<form action="/biblioteca/editoras/novaEditora" method="post">
+	<form action="/editoras/novaEditora" method="post">
 		Nome: <input type="text" name="nome"/><br>
 		Cnpj: <input type="text" name="cnpj" /><br>
 		<input type="submit" />
 	</form>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

@@ -66,7 +66,7 @@ public class EditarObraServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/obras/listaObra");
+		response.sendRedirect("/obras/listaObra");
 	}
 
 }

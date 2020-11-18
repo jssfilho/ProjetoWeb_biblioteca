@@ -49,7 +49,7 @@ table, td {
 				<label>${ colecao.getGenero() }</label>
 			</td>
 			<td>
-				<form action="/biblioteca/colecoes/listaColecoes" method="POST">
+				<form action="/colecoes/listaColecoes" method="POST">
 					<button type="submit" name="codigo" value="${colecao.getCodigo() }">EXCLUIR</button>
 				</form>
 			</td>
@@ -58,6 +58,6 @@ table, td {
 		</tr>
 	</c:forEach>
 	</table>
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

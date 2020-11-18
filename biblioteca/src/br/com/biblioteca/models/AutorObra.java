@@ -61,6 +61,7 @@ public class AutorObra implements Model {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -89,6 +90,7 @@ public class AutorObra implements Model {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return autores;
 	}
 
@@ -116,6 +118,7 @@ public class AutorObra implements Model {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return obras;
 	}
 	
@@ -133,6 +136,7 @@ public class AutorObra implements Model {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -144,8 +148,6 @@ public class AutorObra implements Model {
 	 JOIN biblioteca.colecao c on c.cod = o.cod_colecao
 	
 	
-	}
-	*/
 	public static void main(String[] args) {
 		
 		AutorObra autorObra = new AutorObra();
@@ -159,4 +161,8 @@ public class AutorObra implements Model {
 		}
 		
 	}
+	
+	}
+	*/
+	
 }

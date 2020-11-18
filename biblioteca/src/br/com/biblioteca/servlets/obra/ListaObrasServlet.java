@@ -72,7 +72,7 @@ public class ListaObrasServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/obras/listaObra");
+		response.sendRedirect("/obras/listaObra");
 	}
 
 }

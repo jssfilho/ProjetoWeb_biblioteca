@@ -67,6 +67,7 @@ public class Colecao {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -77,7 +78,7 @@ public class Colecao {
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.colecao");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.colecao");
             
             result =  stmt.executeQuery();
             while(result.next()) {
@@ -91,6 +92,7 @@ public class Colecao {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	public static Colecao getOne(int codigo) throws ClassNotFoundException{
@@ -100,7 +102,7 @@ public class Colecao {
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.colecao");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.colecao");
             
             result =  stmt.executeQuery();
             
@@ -114,6 +116,7 @@ public class Colecao {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return colecao;
 	}
 	
@@ -134,6 +137,7 @@ public class Colecao {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -151,6 +155,7 @@ public class Colecao {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 

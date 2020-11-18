@@ -43,7 +43,7 @@ public class NovaEditoraServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/editoras/listaEditoras");
+		response.sendRedirect("/editoras/listaEditoras");
 	}
 
 }

@@ -61,7 +61,7 @@ public class ListaColecaoServlet extends HttpServlet {
    			e.printStackTrace();
    		}
    		
-   		response.sendRedirect("/biblioteca/colecoes/listaColecoes");
+   		response.sendRedirect("/colecoes/listaColecoes");
    	}
 
 }

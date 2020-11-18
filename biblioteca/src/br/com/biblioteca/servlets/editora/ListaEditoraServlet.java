@@ -60,7 +60,7 @@ public class ListaEditoraServlet extends HttpServlet {
    			e.printStackTrace();
    		}
    		
-   		response.sendRedirect("/biblioteca/editoras/listaEditoras");
+   		response.sendRedirect("/editoras/listaEditoras");
    	}
 
 }

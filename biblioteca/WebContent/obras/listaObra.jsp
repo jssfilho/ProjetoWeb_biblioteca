@@ -53,7 +53,7 @@ table, td {
 				${obra.descricao}
 			</td>
 		<td>
-			<form action="/biblioteca/obras/listaObra" method="POST">
+			<form action="/obras/listaObra" method="POST">
 				<button type="submit" name="codigo" value="${obra.getCodigo() }">EXCLUIR</button>
 			</form>
 		</td>
@@ -61,6 +61,6 @@ table, td {
 	</c:forEach>
 	</table>
 	
-	<a href="/biblioteca/">Voltar</a>
+	<a href="/">Voltar</a>
 </body>
 </html>

@@ -11,14 +11,14 @@
 <body>
 	<h3>Novo Autor</h3>
 	<br />
-	<form action="/biblioteca/autores/novoAutor" method="post">
+	<form action="/autores/novoAutor" method="post">
 		Nome do Autor: <input type="text" name="nome" />
 		Email do Autor: <input type="text" name="email" />
 		<input type="submit" />
 	</form>
 	
 	<br>
-		<a href="/biblioteca/">Voltar</a>
+		<a href="/">Voltar</a>
 	
 </body>
 </html>

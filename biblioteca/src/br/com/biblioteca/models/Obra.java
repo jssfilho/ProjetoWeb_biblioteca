@@ -109,13 +109,16 @@ public class Obra implements Model{
             if (keys.next()) {
             	idValue = (keys.getInt(1));
             }
+          ConexaoBanco.closeConnection(con);
           return idValue;
      
             
         } catch (SQLException ex) {
             System.out.println(ex);
+            ConexaoBanco.closeConnection(con);
             return idValue;
         }
+		
 	}
 	
 	//Metodo Incompleto
@@ -126,7 +129,7 @@ public class Obra implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.obra");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.obra");
             
             result =  stmt.executeQuery();
             while(result.next()) {
@@ -142,6 +145,7 @@ public class Obra implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	
@@ -153,7 +157,7 @@ public class Obra implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("SELECT * FROM biblioteca.obra");
+            stmt = con.prepareStatement("SELECT * FROM heroku_378ff0ac7bb3b96.obra");
             
             result =  stmt.executeQuery();
             
@@ -169,6 +173,7 @@ public class Obra implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return obra;
 	}
 	
@@ -187,6 +192,7 @@ public class Obra implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -205,6 +211,7 @@ public class Obra implements Model{
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+		ConexaoBanco.closeConnection(con);
 		return true;
 	}
 

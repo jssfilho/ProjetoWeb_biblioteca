@@ -63,7 +63,7 @@ public class ListaAutorServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/biblioteca/autores/listaAutores");
+		response.sendRedirect("/autores/listaAutores");
 	}
 
 }

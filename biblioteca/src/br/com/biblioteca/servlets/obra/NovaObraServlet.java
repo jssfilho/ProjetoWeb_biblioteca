@@ -128,7 +128,7 @@ public class NovaObraServlet extends HttpServlet {
 		}
 		
 		
-		response.sendRedirect("/biblioteca/obras/listaObra");
+		response.sendRedirect("/obras/listaObra");
 	}
 
 }

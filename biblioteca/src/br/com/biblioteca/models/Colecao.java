@@ -66,7 +66,7 @@ public class Colecao {
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -90,7 +90,7 @@ public class Colecao {
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	public static Colecao getOne(int codigo) throws ClassNotFoundException{
@@ -113,7 +113,7 @@ public class Colecao {
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return colecao;
 	}
 	
@@ -133,7 +133,7 @@ public class Colecao {
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -150,7 +150,7 @@ public class Colecao {
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 

@@ -109,11 +109,13 @@ public class Obra implements Model{
             if (keys.next()) {
             	idValue = (keys.getInt(1));
             }
+            ConexaoBanco.closeConnection(con);
           return idValue;
      
             
         } catch (SQLException ex) {
             System.out.println(ex);
+            ConexaoBanco.closeConnection(con);
             return idValue;
         }
 	}
@@ -141,7 +143,7 @@ public class Obra implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	
@@ -168,7 +170,7 @@ public class Obra implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return obra;
 	}
 	
@@ -186,7 +188,7 @@ public class Obra implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -204,7 +206,7 @@ public class Obra implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 

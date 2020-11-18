@@ -72,7 +72,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	
@@ -96,7 +96,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return lista;
 	}
 	
@@ -121,7 +121,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return editora;
 	}
 	
@@ -140,7 +140,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	public static boolean delete(int codigo) throws ClassNotFoundException {
@@ -155,7 +155,7 @@ public class Editora implements Model{
             
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        }ConexaoBanco.closeConnection(con);
 		return true;
 	}
 	

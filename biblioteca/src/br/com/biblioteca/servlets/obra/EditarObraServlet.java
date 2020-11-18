@@ -34,11 +34,10 @@ public class EditarObraServlet extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	Obra obra = new Obra();
     	List<Obra> obras = new ArrayList<>();
     	
     	try {
-			obras = obra.listar();
+			obras = Obra.listar();
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/obras/editarObra.jsp");
 			request.setAttribute("obras", obras);
@@ -59,8 +58,8 @@ public class EditarObraServlet extends HttpServlet {
 		String codigo = request.getParameter("codigo");
 		
 		try {
-			Obra obra = new Obra();
-			obra.atualizar(Integer.parseInt(codigo), novaDescricao);
+			
+			Obra.atualizar(Integer.parseInt(codigo), novaDescricao);
 		} catch (NumberFormatException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -35,10 +35,10 @@ public class ListaObrasServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Obra obra = new Obra();
+		
 		Collection<Obra> obras= null;
 		try {
-			obras = obra.listar();
+			obras = Obra.listar();
 			request.setAttribute("obras", obras);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -57,11 +57,12 @@ public class ListaObrasServlet extends HttpServlet {
 		int idObra = Integer.parseInt(codigo);
 		
 		try {
-			AutorObra au = new AutorObra();
-			au.delete(idObra);
+
 			
-			Obra obra = new Obra();
-			obra.delete(idObra);
+			AutorObra.delete(idObra);
+			
+			
+			Obra.delete(idObra);
 			
 			
 		} catch (NumberFormatException e) {

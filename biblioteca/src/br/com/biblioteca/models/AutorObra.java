@@ -128,7 +128,7 @@ public class AutorObra implements Model {
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("DELETE FROM biblioteca.obra_autor WHERE cod_obra = ?");
+            stmt = con.prepareStatement("DELETE FROM heroku_378ff0ac7bb3b96.obra_autor WHERE cod_obra = ?");
             stmt.setInt(1, codigo);
             stmt.executeUpdate();
             

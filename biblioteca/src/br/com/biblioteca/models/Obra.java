@@ -203,7 +203,7 @@ public class Obra implements Model{
         PreparedStatement stmt = null;
 		try {
 			
-            stmt = con.prepareStatement("DELETE FROM obra WHERE cod = ?");
+            stmt = con.prepareStatement("DELETE FROM heroku_378ff0ac7bb3b96.obra WHERE cod = ?");
             stmt.setInt(1, codigo);
             stmt.executeUpdate();
             
